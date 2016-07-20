@@ -17,3 +17,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px; 
   padding: 0px;
 }
+
+body {
+  background: url('/assets/restaurant_icons.png');
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+
+.navbar.navbar-inverse {
+  background: url('/assets/grey_wash_wall.png');
+  border-radius: 0; 
+  border-color: #666565;
+  box-shadow: 1px 2px 4px #2A2A2A;
+}
