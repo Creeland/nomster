@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .booyah-box{
   -webkit-box-shadow:1px 1px 2px 0 #d0d0d0;
   -moz-box-shadow:1px 1px 2px 0 #d0d0d0;
@@ -28,4 +29,15 @@ body {
   border-radius: 0; 
   border-color: #666565;
   box-shadow: 1px 2px 4px #2A2A2A;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+  font-family: "pacificoregular";
+  font-size: 26px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-family: 'pacificoregular';
 }
