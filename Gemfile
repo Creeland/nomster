@@ -36,6 +36,9 @@ gem 'will_paginate-bootstrap'
 # simple form
 gem 'simple_form'
 
+# User Authentication
+gem 'devise', ">= 3.2.4"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
