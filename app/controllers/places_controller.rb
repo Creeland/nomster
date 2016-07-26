@@ -15,6 +15,11 @@ class PlacesController < ApplicationController
   end
 
   def show
+    # Querries the Place database to find a "place" with a certain id and assigns it to @place
+    @place = Place.find(params[:id])
+  end
+
+  def edit
     @place = Place.find(params[:id])
   end
 
