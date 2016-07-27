@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   # Checks before a certain rails action occurs.
   # In this case it only checks if a user is logged in.
   # You can find these action suffixes using "rake routes" :party_parrot:
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]
 
   def index
     @places = Place.paginate(:page => params[:page], :per_page => 5)
@@ -43,6 +43,10 @@ class PlacesController < ApplicationController
 
   def destroy
     @place = Place.find(params[:id])
+    if @place.user != current_user
+      return render text: "Not Allowed", status: :forbidden
+    end 
+    
     @place.destroy
     redirect_to root_path
   end
