@@ -6,6 +6,39 @@
   <br><br>
   <p> <%= @place.description %> </p>
 
+  <!-- Google Maps API -->
+  <% if @place.latitude.present? && @place.longitude.present? %>
+    <script>
+
+      function initMap() {
+        // Uses the latitude and longitude entries in the Place table
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <!-- uses the key I generated with google api's -->
+    <!-- Check out "google maps example" for finding sample google maps JS integration -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8XT4uva7mqQWvwixqZaKUfOPKTKOPeu0&callback=initMap">
+    </script>
+
+    <br>
+
+    <div id="map"></div>
+  <% end %>
+
+  <br>
+
   <div class="pull-right">
     <!-- Uses logic to check if there is a current user and if the current user matches this place's user. If both true it allows access to the edit button. -->
     <% if current_user && current_user == @place.user %>
