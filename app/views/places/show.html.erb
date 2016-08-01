@@ -52,10 +52,11 @@
 
 
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <%= simple_form_for @comment, url: "#" do |f| %>
+  <!-- the comments are now wired up underneath the place area in the routes.rb file -->
+  <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
     <%= f.input :message %>
     <%= f.input :rating %>
     <br>
-    <%= f.submit "Added a comment", class: 'btn btn-primary' %>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
   <% end %>
 </div>

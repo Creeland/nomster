@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   
   root 'places#index'
 
-  resources :places
+  # Restricts the comments to only be under places. 
+  resources :places do
+    resources :comments, only:  :create
+  end 
 
 
   # The priority is based upon order of creation: first created -> highest priority.
