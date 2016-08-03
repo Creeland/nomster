@@ -1,7 +1,8 @@
 class Place < ActiveRecord::Base
   belongs_to :user 
   # designates that the Place can have many comments tied to it. 
-  has_many :comments 
+  has_many :comments
+  has_many :photos
 
   # Geocode
   geocoded_by :address

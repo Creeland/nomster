@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Restricts the comments to only be under places. 
   resources :places do
     resources :comments, only:  :create
+    resources :photos, only: :create
   end 
 
 

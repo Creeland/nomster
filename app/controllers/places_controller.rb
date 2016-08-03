@@ -27,6 +27,7 @@ class PlacesController < ApplicationController
     # Querries the Place database to find a "place" with a certain id and assigns it to @place
     @place = Place.find(params[:id])
     @comment = Comment.new
+    @photo = Photo.new
   end
 
   def edit
