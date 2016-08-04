@@ -3,7 +3,18 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!
   def create
     @place =Place.find(params[:place_id])
-    @place.photos.create(photo_params)
+    if @place.user != current_user
+      return render text: "Not Allowed", status: :forbidden
+    end
+
+    @photo = @place.photos.build(photo_params)
+
+    if @photo.save
+      flash[:notice] = "You did it!!!!!"
+    else
+      flash[:error] = ""
+    end 
+
     redirect_to place_path(@place)
   end 
 
